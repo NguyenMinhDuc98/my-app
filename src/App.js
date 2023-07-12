@@ -1,22 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DisplayComponent from "./HOCs/DisplayComponent";
+import MousePosition from "./HOCs/MousePosition";
+import logo from "./logo.svg";
 
 function App() {
+  // const position = useMousePosition();
+  // now User can say hi
+  // new User("Dude").sayHi(); // Hi Dude!
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div style={{ height: "100%" }}>
+          {/* <Mouse render={({ x, y }) => <MousePosition x={x} y={y} />} /> */}
+          {/* {position} */}
+          <MousePosition TempComponent={DisplayComponent} />
+        </div>
       </header>
     </div>
   );
