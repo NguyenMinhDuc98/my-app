@@ -1,12 +1,11 @@
 import "./App.css";
-import DisplayComponent from "./HOCs/DisplayComponent";
-import MousePosition from "./HOCs/MousePosition";
+import useMousePosition from "./CustomHook/useMousePosition";
+import { User } from "./Mixins";
 import logo from "./logo.svg";
 
 function App() {
-  // const position = useMousePosition();
-  // now User can say hi
-  // new User("Dude").sayHi(); // Hi Dude!
+  const position = useMousePosition();
+  new User("Dude").sayHi(); // Hi Dude!
 
   return (
     <div className="App">
@@ -14,8 +13,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div style={{ height: "100%" }}>
           {/* <Mouse render={({ x, y }) => <MousePosition x={x} y={y} />} /> */}
-          {/* {position} */}
-          <MousePosition TempComponent={DisplayComponent} />
+          {position}
+          {/* <MousePosition TempComponent={DisplayComponent} /> */}
         </div>
       </header>
     </div>
